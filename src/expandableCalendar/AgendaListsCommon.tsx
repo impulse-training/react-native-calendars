@@ -33,6 +33,8 @@ export interface AgendaListProps extends SectionListProps<any, DefaultSectionT> 
     visibleIndicesChangedDebounce?: number;
     renderFooter?: () => React.ReactElement | null;
   };
+
+  scrollToEndOnContentSizeChange?: boolean;
 }
 
 interface AgendaSectionHeaderProps {
