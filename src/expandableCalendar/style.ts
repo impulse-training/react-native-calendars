@@ -28,7 +28,7 @@ export default function styleConstructor(theme: Theme = {}) {
       })
     },
     containerWrapper: {
-      paddingBottom: 6
+      paddingBottom: 0
     },
     container: {
       backgroundColor: appStyle.calendarBackground
