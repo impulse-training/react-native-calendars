@@ -21,7 +21,7 @@ export interface WeekCalendarProps extends CalendarListProps {
 }
 
 const NUMBER_OF_PAGES = 50;
-const DEFAULT_PAGE_HEIGHT = 48;
+const DEFAULT_PAGE_HEIGHT = 52;
 
 const WeekCalendar = (props: WeekCalendarProps) => {
   const {current, firstDay = 0, markedDates, allowShadow = true, hideDayNames, theme, calendarWidth, calendarHeight = DEFAULT_PAGE_HEIGHT, testID} = props;
