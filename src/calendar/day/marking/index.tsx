@@ -1,11 +1,11 @@
 import filter from 'lodash/filter';
 import React, {useRef} from 'react';
-import {View, ViewStyle, TextStyle, StyleProp} from 'react-native';
+import {StyleProp, TextStyle, View, ViewStyle} from 'react-native';
 
-import {Theme, MarkingTypes} from '../../../types';
 import {extractDotProps} from '../../../componentUpdater';
-import styleConstructor from './style';
+import {MarkingTypes, Theme} from '../../../types';
 import Dot, {DotProps} from '../dot';
+import styleConstructor from './style';
 
 export enum Markings {
   DOT = 'dot',
@@ -87,7 +87,11 @@ const Marking = (props: MarkingProps) => {
   };
 
   const renderMultiMarkings = (containerStyle: object, items?: DOT[] | PERIOD[]) => {
-    return <View style={containerStyle}>{getItems(items)}</View>;
+    return (
+      <View testID="calendar-marking" style={containerStyle}>
+        {getItems(items)}
+      </View>
+    );
   };
 
   const renderPeriod = (index: number, item: any) => {
@@ -104,7 +108,7 @@ const Marking = (props: MarkingProps) => {
     if (endingDay) {
       styles.push(style.current.endingDay);
     }
-    return <View key={index} style={styles}/>;
+    return <View key={index} style={styles} />;
   };
 
   const renderDot = (index?: number, item?: any) => {
